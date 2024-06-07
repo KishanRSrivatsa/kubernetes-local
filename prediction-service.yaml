@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-prediction-service
+spec:
+  selector:
+    app: ml-prediction
+  ports:
+    - protocol: TCP
+      port: 8083  # Change this port to match your Flask app port inside the container
+      targetPort: 8083  # Change this port to match your Flask app port inside the container

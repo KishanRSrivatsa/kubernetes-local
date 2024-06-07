@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-training
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ml-training
+  template:
+    metadata:
+      labels:
+        app: ml-training
+    spec:
+      containers:
+      - name: ml-training
+        image: ml-training:latest
+        imagePullPolicy: IfNotPresent  # Use "IfNotPresent" if using remote registry
+        ports:
+        - containerPort: 8083
