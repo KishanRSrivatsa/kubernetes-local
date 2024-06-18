@@ -1,2 +1,26 @@
 Docker Error in while building 
 & minikube -p minikube docker-env --shell powershell | Invoke-Expression
+
+Kubernetes,training,prediction
+Docker should be running by opening the Docker Desktop application
+
+minikube status
+
+docker info
+
+minikube start --driver=docker
+
+minikube status
+
+kubectl get nodes
+
+kubectl apply -f training-deployment.yaml
+kubectl apply -f prediction-deployment.yaml
+kubectl apply -f prediction-service.yaml
+
+kubectl get pods
+kubectl get services
+
+kubectl logs <pod_name>
+
+minikube service ml-prediction-service
